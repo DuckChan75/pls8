@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Math Tools</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- math.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+  
+  <!-- plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+  
+  <!-- crypto-js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="main-title">Math Tools</h1>
+    <p id="toolDescription">Select a tool:</p>
+    <div id="toolSelector" class="windows">
+      <div id="calcWindow" class="window">Integration & Derivative Calculator</div>
+      <div id="graphWindow" class="window">Graph Visualization</div>
+      <div id="passwordWindow" class="window">Password Encrypter</div>
+    </div>
+
+    <!-- Calculator Form -->
+    <form id="calcForm" class="hidden-form">
+      <h1>Calculator</h1>
+      <label for="operation">Operation:</label>
+      <select id="operation">
+        <option value="derivative">Derivative</option>
+        <option value="integral">Integral</option>
+      </select>
+
+      <label for="functionSelect">Function:</label>
+      <select id="functionSelect">
+        <option value="x^2">x²</option>
+        <option value="x^3">x³</option>
+        <option value="sin(x)">sin(x)</option>
+        <option value="cos(x)">cos(x)</option>
+        <option value="e^x">e^x</option>
+        <option value="ln(x)">ln(x)</option>
+      </select>
+
+      <label for="xInput">x Value:</label>
+      <input type="number" id="xInput" placeholder="Enter a number" required step="any" />
+      <button type="submit">Calculate</button>
+
+      <div id="result"></div>
+      <div id="steps"></div>
+      <button id="backButton" type="button" class="back-btn">Back to Home</button>
+    </form>
+
+    <!-- Graph Form -->
+    <form id="graphForm" class="hidden-form">
+      <h1>Graph Visualization</h1>
+      <label for="functionInput">Function:</label>
+      <input id="functionInput" type="text" placeholder="e.g., x^2" required />
+      <button id="plotButton" type="button">Plot Graph</button>
+      <div id="graph"></div>
+      <button id="backButtonGraph" type="button" class="back-btn">Back to Home</button>
+    </form>
+
+    <!-- Password Encrypter Form -->
+    <form id="passwordForm" class="hidden-form">
+      <h1>Password Encrypter</h1>
+      <label for="passwordInput">Enter Password:</label>
+      <div class="password-container">
+        <input id="passwordInput" type="password" placeholder="Enter a password" required />
+        <button type="button" id="togglePassword" class="toggle-button">Show</button>
+      </div>
+      <button id="encryptButton" type="button">Encrypt Password</button>
+      <div id="encryptedPassword" class="result-box"></div>
+      <button id="backButtonPassword" type="button" class="back-btn">Back to Home</button>
+    </form>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js" defer></script>
+</body>
+</html>
